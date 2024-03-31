@@ -17,13 +17,25 @@ function showGrid(userChoice) {
   }
 }
 
-// colour change function
 function colorchange() {
-  const r = Math.round(Math.random() * 255);
-  const g = Math.round(Math.random() * 255);
-  const b = Math.round(Math.random() * 255);
-  this.style.background = `rgb(${r}, ${g}, ${b})`;
-}
+  // Check if the div already has a color assigned
+  if (!this.dataset.colored) {
+    let r = Math.round(Math.random() * 255);
+    let g = Math.round(Math.random() * 255);
+    let b = Math.round(Math.random() * 255);
+    let newColor = `rgb(${r}, ${g}, ${b})`;
+    this.style.background = newColor;
+    // Set a flag to indicate that the div has been colored
+    this.dataset.colored = true;
+    // Set initial opacity to 10%
+    this.style.opacity = 0.1;
+  } else {
+    // Increase opacity by 10% on each hover
+    let currentOpacity = parseFloat(this.style.opacity) || 0.1; // Get current opacity or use 0.1 if not set
+    let newOpacity = Math.min(currentOpacity + 0.1, 1); // Increase opacity by 0.1, but cap at 1
+    this.style.opacity = newOpacity;
+  }
+} 
 
 function setGridArea(widthHeight) {
   const containerWidth = containerDiv.clientWidth;

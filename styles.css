@@ -8,7 +8,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 50px;
-  width: 600px;}
+  width: 600px;
+}
 
 #click-me {
   margin-top: 20px;
