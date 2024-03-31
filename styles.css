@@ -1,3 +1,18 @@
-.container{
-    border: solid 1px black
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  width: 600px;}
+
+#click-me {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100px;
+  border-radius: 10px;
 }
